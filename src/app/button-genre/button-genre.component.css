@@ -1,0 +1,9 @@
+button {   
+    box-shadow: 10px 5px 5px rgb(74, 175, 74);
+    background-color: rgb(74, 175, 74);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}

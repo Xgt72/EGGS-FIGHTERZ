@@ -5,11 +5,15 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonnageComponent } from './personnage/personnage.component';
+import { ButtonSexeComponent } from './button-sexe/button-sexe.component';
+import { ButtonGenreComponent } from './button-genre/button-genre.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonnageComponent
+    PersonnageComponent,
+    ButtonSexeComponent,
+    ButtonGenreComponent
   ],
   imports: [
     BrowserModule,
