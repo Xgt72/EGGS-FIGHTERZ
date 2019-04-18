@@ -78,6 +78,7 @@ export class DataAPIService {
               let charac: Character = new Character();
               charac.id = current.id;
               charac.name = current.name;
+              charac.species = current.species;
               charac.gender = current.gender;
               charac.origin = current.origin;
               charac.image = current.image;

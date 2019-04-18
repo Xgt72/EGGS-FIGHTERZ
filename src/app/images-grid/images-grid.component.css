@@ -1,0 +1,19 @@
+.card {
+    box-shadow: 3px 3px 2px gray;
+    width: 20rem;
+
+}
+
+.card img {
+    border-radius: 5px;
+    border: 1px solid black;
+    
+}
+
+#displayMorePictures {
+    box-shadow: 3px 5px 3px black,-3px 5px 3px black;
+}
+
+.cardPicture {
+    /* border: 1px solid red; */
+}

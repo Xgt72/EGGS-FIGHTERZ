@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { PersonnageComponent } from './personnage/personnage.component';
 import { ButtonSexeComponent } from './button-sexe/button-sexe.component';
 import { ButtonGenreComponent } from './button-genre/button-genre.component';
+import { ImagesGridComponent } from './images-grid/images-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonnageComponent,
     ButtonSexeComponent,
-    ButtonGenreComponent
+    ButtonGenreComponent,
+    ImagesGridComponent
   ],
   imports: [
     BrowserModule,
