@@ -8,6 +8,7 @@ import { PersonnageComponent } from './personnage/personnage.component';
 import { ButtonSexeComponent } from './button-sexe/button-sexe.component';
 import { ButtonGenreComponent } from './button-genre/button-genre.component';
 import { ImagesGridComponent } from './images-grid/images-grid.component';
+import { CarteComponent } from './carte/carte.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ImagesGridComponent } from './images-grid/images-grid.component';
     PersonnageComponent,
     ButtonSexeComponent,
     ButtonGenreComponent,
-    ImagesGridComponent
+    ImagesGridComponent,
+    CarteComponent
   ],
   imports: [
     BrowserModule,
