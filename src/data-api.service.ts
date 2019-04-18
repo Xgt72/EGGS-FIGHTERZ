@@ -22,7 +22,7 @@ export class DataAPIService {
 
   constructor(private myService: HttpClient) { }
 
-  public getEggsArray(eggCategorie: string, adress: string): Observable<any> {
+  public getEggsArray(adress: string, eggCategorie?: string): Observable<any> {
     return this.myService.get(adress).pipe(
       map(
         (paramData: any[]) => {
@@ -45,12 +45,25 @@ export class DataAPIService {
               console.log("error");
             }
           }
+
+          // if eggCategorie == health or noHealth
+          if (eggCategorie !== undefined) {
+            if (eggCategorie == "health") {
+              let newEggsList = eggsList.filter(
+                (egg) => egg.power.includes("health")
+              );
+              eggsList = newEggsList;
+            } //else {
+            //   eggsList.splice();
+            // }
+          }
+
           return eggsList;
         }
       )
     )
   }
-  
+
   public getCharactersArray(adress: string): Observable<any> {
     return this.myService.get(adress).pipe(
       map(
@@ -65,10 +78,10 @@ export class DataAPIService {
               let charac: Character = new Character();
               charac.id = current.id;
               charac.name = current.name;
-              charac.gender = current.caliber;
-              charac.origin = current.image;
-              charac.image = current.power;
-              charac.skills = current.;
+              charac.gender = current.gender;
+              charac.origin = current.origin;
+              charac.image = current.image;
+              charac.skills = current.skills;
 
               charactersList.push(charac);
             } else {
