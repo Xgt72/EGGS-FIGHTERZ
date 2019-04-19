@@ -1,0 +1,18 @@
+<div id="mainBattle" class="container-fluid mx-0 my-5">
+  <section id="battlePage" class="row no-gutters align-items-center bg-primary p-2">
+    <div id="userHero">
+      <div id="resultOfActionHero">
+        <p>{{impactHero}}-5</p>
+      </div>
+    </div>
+    <div id="opponent">
+      <div id="resultOfActionOpponent">
+        <p>{{impactOpponent}}+1</p>
+      </div>
+    </div>
+    <button type="button" class="btn play" (click)="nextTurn(char)">Play</button>
+  </section>
+</div>
+<audio autoplay loop>
+  <source src="../../assets/Musics Street/33.GuileStage.mp3" type="audio/mpeg">
+</audio>

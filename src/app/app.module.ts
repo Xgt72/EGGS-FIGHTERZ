@@ -9,6 +9,7 @@ import { ButtonSexeComponent } from './button-sexe/button-sexe.component';
 import { ButtonGenreComponent } from './button-genre/button-genre.component';
 import { ImagesGridComponent } from './images-grid/images-grid.component';
 import { CarteComponent } from './carte/carte.component';
+import { BattlePageComponent } from './battle-page/battle-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CarteComponent } from './carte/carte.component';
     ButtonSexeComponent,
     ButtonGenreComponent,
     ImagesGridComponent,
-    CarteComponent
+    CarteComponent,
+    BattlePageComponent
   ],
   imports: [
     BrowserModule,
