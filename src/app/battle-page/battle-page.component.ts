@@ -22,6 +22,7 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
   public opponentHealth: number;
   public hero: Character;
   public opponent: Character;
+  public messageWinOrDead: string;
   // public randomCharacter: RandomCharacterComponent;
   // public randomEgg: RandomEggsComponent;
   public egg: Eggs;
@@ -42,7 +43,10 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
     this.opponent = new Character();
     this.eggsList = [];
     this.charactersList = [];
-
+    this.impactHero = "";
+    this.impactOpponent = "";
+    this.messageWinOrDead = "";
+    this.egg = new Eggs();
 
 
   }
@@ -59,14 +63,19 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
         this.eggsList = paramEggs;
       }
     );
+    this.hero = { id: "5cac51240d488f0da6151c4b", name: "Antenna Rick", species: "Human", gender: "Male", origin: "Unknow", image: "https://images.innoveduc.fr/easter_hackathon/19.jpeg", skills: ["resurrection:8", "pass through walls:9", "resurrection:8"] };
+    this.opponent = this.getRandomCharacter();
+    this.opponent = this.opponent;
 
   }
 
   ngAfterViewChecked() {
     // this.battleMusic = "../../assets/Musics Street/" + this.battleMusics[this.musicIndex];
     // console.log(this.battleMusic);
-    this.hero = { id: "5cac51240d488f0da6151c4b", name: "Antenna Rick", species: "Human", gender: "Male", origin: "Unknow", image: "https://images.innoveduc.fr/easter_hackathon/19.jpeg", skills: ["resurrection:8", "pass through walls:9", "resurrection:8"] };
-    this.opponent = this.getRandomCharacter();
+    this.impactHero = this.impactHero;
+    this.impactOpponent = this.impactOpponent;
+    this.messageWinOrDead = this.messageWinOrDead;
+    this.egg = this.egg;
 
 
   }
@@ -94,11 +103,11 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
   public battle(char: string): void {
     if (this.heroHealth > 0 && this.opponentHealth > 0) {
       // récuperer un nouvel egg
-      let egg = new Eggs();
-      egg = this.getRandomEggs();
+      this.egg = new Eggs();
+      this.egg = this.getRandomEggs();
       // console.log(egg);
 
-      let power = egg.power.split(" ");
+      let power = this.egg.power.split(" ");
       console.log(power);
       let powerNumber = power[1].split(":");
       // console.log(powerNumber);
@@ -106,7 +115,7 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
       // console.log(powerQuantity);
 
       if (char == "Hero") {
-        if (egg.power.includes("increase")) {
+        if (this.egg.power.includes("increase")) {
           if (this.heroHealth <= 50) {
             this.heroHealth += powerQuantity;
             this.impactHero = "+" + powerQuantity;
@@ -117,17 +126,18 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
           }
           // console.log(this.heroHealth);
 
-        } else if (egg.power.includes("decrease")) {
+        } else if (this.egg.power.includes("decrease")) {
           this.opponentHealth -= 2.5 * powerQuantity;
-          this.impactOpponent = "-" + powerQuantity;
+          this.impactOpponent = "-" + 2.5*powerQuantity;
 
           if (this.opponentHealth <= 0) {
             console.log("Your opponent is Dead !!");
+            this.messageWinOrDead = "You Win, Your Opponent is Dead !!";
           }
           // console.log(this.opponentHealth);
         }
       } else if (char == "Opponent") {
-        if (egg.power.includes("increase")) {
+        if (this.egg.power.includes("increase")) {
           if (this.opponentHealth < 50) {
             this.opponentHealth += powerQuantity;
             this.impactOpponent = "+" + powerQuantity;
@@ -135,12 +145,13 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
           if (this.opponentHealth > 50) {
             this.opponentHealth = 50;
           }
-        } else if (egg.power.includes("decrease")) {
+        } else if (this.egg.power.includes("decrease")) {
           this.heroHealth -= 2.5 * powerQuantity;
-          this.impactHero = "-" + powerQuantity;
+          this.impactHero = "-" + 2.5*powerQuantity;
 
           if (this.heroHealth <= 0) {
             console.log("Your Hero is Dead !!");
+            this.messageWinOrDead = "You Lose, Your Hero is Dead !!";
           }
         }
       } else if (this.heroHealth <= 0) {

@@ -32,6 +32,17 @@ export class ImagesGridComponent implements OnInit, AfterViewChecked {
         this.charactersList = paramChar;
       }
     );
+
+    let charactersByGender = this.charactersList.filter(
+      char => char.gender == this.gender
+    );
+
+
+    let characterBySpecies = charactersByGender.filter(
+      char => char.species == this.species
+    );
+
+    this.charactersList = characterBySpecies;
   }
 
 
@@ -43,9 +54,20 @@ export class ImagesGridComponent implements OnInit, AfterViewChecked {
     // );
     // console.log("2");    
     this.species = "Human";
-    this.gender = "Female";
+    this.gender = "Male";
+
+    let charactersByGender = this.charactersList.filter(
+      char => char.gender == this.gender
+    );
 
 
+    let characterBySpecies = charactersByGender.filter(
+      char => char.species == this.species
+    );
+
+    this.charactersList = characterBySpecies;
+
+    this.charactersList = this.charactersList;
   }
 
   ngAfterViewChecked() {
@@ -64,6 +86,8 @@ export class ImagesGridComponent implements OnInit, AfterViewChecked {
     );
 
     this.charactersList = characterBySpecies;
+
+    this.charactersList = this.charactersList;
   }
 
   public chooseYourHero(char: Character) {
