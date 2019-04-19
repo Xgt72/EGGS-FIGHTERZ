@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, AfterViewChecked } from '@angular/core';
 import { DataAPIService } from "../../data-api.service";
 import { Character } from "../character";
+import { specieGender } from "../speciesAndGender";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-images-grid',
@@ -9,18 +11,21 @@ import { Character } from "../character";
 })
 export class ImagesGridComponent implements OnInit, AfterViewChecked {
 
+  // public species: string;
+  // public gender: string;
   public species: string = "Human";
-  public gender: string = "Female";
-  // @Input() public species: string = "Human";
-  // @Input() public gender: string = "Male";
+  public gender: string = "Male";
 
   public charactersList: Character[];
   public charactersAdress: string = "http://easteregg.wildcodeschool.fr/api/characters";
 
 
 
-  constructor(private myService: DataAPIService) {
+  constructor(private myService: DataAPIService, private _router:Router ) {
     this.charactersList = [];
+    this.species = "Human";
+    this.gender = "Male";
+ 
 
     this.myService.getCharactersArray(this.charactersAdress).subscribe(
       (paramChar: Character[]) => {
@@ -36,11 +41,18 @@ export class ImagesGridComponent implements OnInit, AfterViewChecked {
     //     this.charactersList = paramChar;
     //   }
     // );
-    // console.log("2");
+    // console.log("2");    
+    this.species = "Human";
+    this.gender = "Female";
+
 
   }
 
   ngAfterViewChecked() {
+    // this.gender = specieGender.gender;
+    // this.species = specieGender.specie;
+    // console.log(this.gender);
+    // console.log(this.species);
 
     let charactersByGender = this.charactersList.filter(
       char => char.gender == this.gender
@@ -55,7 +67,7 @@ export class ImagesGridComponent implements OnInit, AfterViewChecked {
   }
 
   public chooseYourHero(char: Character) {
-
+    this._router.navigate(["/battle-page"]);
   }
 
 }

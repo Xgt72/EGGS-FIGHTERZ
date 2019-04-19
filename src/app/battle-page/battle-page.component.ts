@@ -3,8 +3,8 @@ import { Character } from "../character";
 import { Eggs } from "../eggs";
 import { choosenHero } from "../hero";
 import { choosenOpponent } from "../opponent";
-import { RandomCharacterComponent } from "../random-character/random-character.component";
-import { RandomEggsComponent } from "../random-eggs/random-eggs.component";
+/*import { RandomCharacterComponent } from "../random-character/random-character.component";
+import { RandomEggsComponent } from "../random-eggs/random-eggs.component";*/
 
 @Component({
   selector: 'app-battle-page',
@@ -20,8 +20,8 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
   public opponentHealth: number;
   public hero: Character = choosenHero;
   public opponent: Character = choosenOpponent;
-  public randomCharacter: RandomCharacterComponent;
-  public randomEgg: RandomEggsComponent;
+  /*public randomCharacter: RandomCharacterComponent;
+  public randomEgg: RandomEggsComponent;*/
 
   constructor() { 
     this.musicIndex = 2;
@@ -38,10 +38,10 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
     // console.log(this.battleMusic);
   }
 
-  public nextTurn(char: Character) {
+  /*public nextTurn(char: Character) {
     this.hero = char;
-    this.randomCharacter.
+    this.randomCharacter
 
 
-  }
+  }*/
 }
