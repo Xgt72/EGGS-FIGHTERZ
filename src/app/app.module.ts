@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { PersonnageComponent } from './personnage/personnage.component';
 import { ButtonSexeComponent } from './button-sexe/button-sexe.component';
 import { ButtonGenreComponent } from './button-genre/button-genre.component';
+import { RandomCharacterComponent } from "./random-character/random-character.component";
+import { RandomEggsComponent } from "./random-eggs/random-eggs.component";
 
 import { SexeMenuComponent } from './sexe-menu/sexe-menu.component';
 import { GenreMenuComponent } from './genre-menu/genre-menu.component';
@@ -27,7 +29,9 @@ import { BattlePageComponent } from './battle-page/battle-page.component';
     GenreMenuComponent,
     ImagesGridComponent,
     CarteComponent,
-    BattlePageComponent
+    BattlePageComponent,
+    RandomCharacterComponent,
+    RandomEggsComponent
   ],
   imports: [
     BrowserModule,
