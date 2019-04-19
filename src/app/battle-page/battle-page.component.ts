@@ -7,6 +7,7 @@ import { RandomCharacterComponent } from "../random-character/random-character.c
 import { RandomEggsComponent } from "../random-eggs/random-eggs.component";
 import { DataAPIService } from "../../data-api.service";
 
+
 @Component({
   selector: 'app-battle-page',
   templateUrl: './battle-page.component.html',
@@ -32,6 +33,7 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
   public charactersAdress: string = "http://easteregg.wildcodeschool.fr/api/characters";
 
   constructor(private myService: DataAPIService) {
+
 
     this.musicIndex = 2;
     this.heroHealth = 50;
@@ -69,6 +71,7 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
 
   }
 
+
   public nextTurn() {
     // this.hero = { id: "5cac51240d488f0da6151c4b", name: "Antenna Rick", species: "Human", gender: "Male", origin: "Unknow", image: "https://images.innoveduc.fr/easter_hackathon/19.jpeg", skills: ["resurrection:8", "pass through walls:9", "resurrection:8"] };
     // this.opponent = this.getRandomCharacter();
@@ -78,7 +81,6 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
     console.log(this.opponentHealth);
 
     // Hero turn
-
     this.battle("Hero");
     console.log("Héro :" + this.heroHealth);
     console.log("Adversaire :" + this.opponentHealth);
@@ -156,4 +158,5 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
   public getRandomEggs(): Eggs {
     return this.eggsList[Math.floor((Math.random() * this.eggsList.length))];
   }
+
 }

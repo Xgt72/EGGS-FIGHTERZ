@@ -1,6 +1,5 @@
 #mainBattle {
-    height: 50rem;
-    background-color: aqua;
+    height: 45rem;             
 }
 
 #battlePage {
@@ -8,34 +7,55 @@
     height: 100%;
 }
 
-#userHero {
+#userHero {    
     position: absolute;
     top: 10%;
     left: 5%;
-    width: 30rem;
-    height: 40rem;
-    background-color: black;
+    width: 25rem;
+    height: 35rem;
+    background: url("https://images.innoveduc.fr/easter_hackathon/4df16f2a2102cb1e39d2f2531e3b7881.jpg"); 
+    border: 2px solid white;
+    border-radius: 3rem; 
+    background-position: center;
+    background-size: cover;
+}
+
+#userHero:hover {      
+    border-radius: 3rem; 
+    box-shadow: 15px 15px 5px rgb(74, 85, 43);
+    
 }
 
 #opponent {
     position: absolute;
     top: 10%;
     right: 5%;
-    width: 30rem;
-    height: 40rem;
+    width: 25rem;
+    height: 35rem;
     background-color: black;
+    border: 2px solid white;  
+    border-radius: 3rem;
+    background: url("https://images.innoveduc.fr/easter_hackathon/250px-Mystique11.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#opponent:hover{
+    border-radius: 3rem; 
+    box-shadow: 15px 15px 5px rgb(74, 85, 43);    
 }
 
 .play {
     position: absolute;
-    bottom: 10%;
+    bottom: 12%;
     left: 50%;
     transform: translate(-50%,0);
     /* color: #8bc34a;
     border: 2px solid #8bc34a; */
-    color: black;
-    font-size: 5rem;
-    border: 2px solid black;
+    color: white;
+    font-size: 5rem;    
+    border: 2px solid white;
     border-radius: 20px;
 }
 
