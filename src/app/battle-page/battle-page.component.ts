@@ -40,6 +40,8 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
   ngAfterViewChecked() {
     // this.battleMusic = "../../assets/Musics Street/" + this.battleMusics[this.musicIndex];
     // console.log(this.battleMusic);
+    
+
   }
 
   public nextTurn(char: Character) {
@@ -48,12 +50,9 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
     // Hero turn
     this.battle();
     // Opponent turn
+  
 
-
-
-  }
-
-  public battle(): void {
+  public battle(char: string): void {
     // récuperer un nouvel egg
     this.egg = new Eggs();
     this.egg = this.randomEgg.getRandomEggs();
@@ -65,22 +64,42 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
     let powerQuantity = Number(powerNumber[1]);
     console.log(powerQuantity);
 
-    if (this.egg.power.includes("increase")) {
-      if (this.heroHealth < 50) {
-        this.heroHealth += powerQuantity;
-        this.impactHero = "+" + powerQuantity;
-      }
-      if (this.heroHealth > 50) {
-        this.heroHealth = 50;
-      }
-    } else if (this.egg.power.includes("decrease")) {
-      this.opponentHealth -= powerQuantity;
-      this.impactOpponent = "-" + powerQuantity;
+    if (char == "Hero") {
+      if (this.egg.power.includes("increase")) {
+        if (this.heroHealth < 50) {
+          this.heroHealth += powerQuantity;
+          this.impactHero = "+" + powerQuantity;
+        }
+        if (this.heroHealth > 50) {
+          this.heroHealth = 50;
+        }
+      } else if (this.egg.power.includes("decrease")) {
+        this.opponentHealth -= powerQuantity;
+        this.impactOpponent = "-" + powerQuantity;
 
-      if (this.opponentHealth <= 0) {
-        console.log("Your opponent is Dead !!");
+        if (this.opponentHealth <= 0) {
+          console.log("Your opponent is Dead !!");
+        }
+      }
+    } else if (char == "Opponent") {
+      if (this.egg.power.includes("increase")) {
+        if (this.opponentHealth < 50) {
+          this.opponentHealth += powerQuantity;
+          this.impactOpponent = "+" + powerQuantity;
+        }
+        if (this.opponentHealth > 50) {
+          this.opponentHealth = 50;
+        }
+      } else if (this.egg.power.includes("decrease")) {
+        this.heroHealth -= powerQuantity;
+        this.impactHero = "-" + powerQuantity;
+
+        if (this.heroHealth <= 0) {
+          console.log("Your Hero is Dead !!");
+        }
       }
     }
+
 
 
   }
