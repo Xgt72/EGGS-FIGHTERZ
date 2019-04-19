@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   constructor(private myService: DataAPIService) {
     this.eggsList = [];
-    this.charactersList = [];
+    this.charactersList = []; 
     
   }
 

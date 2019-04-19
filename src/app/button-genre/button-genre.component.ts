@@ -11,5 +11,5 @@ export class ButtonGenreComponent implements OnInit {
 
   ngOnInit() {
   }
-public createGenre() {}
+public createGenre(genre:string) {}
 }

@@ -1,6 +1,8 @@
 button { 
-    background-color: green;  
-    box-shadow: 10px 5px 5px green;
+    background-color: rgb(74, 175, 74);  
+    box-shadow: 10px 5px 5px rgb(74, 175, 74);
+    color: white;
+    font-size: 2rem;
 
 }
 
