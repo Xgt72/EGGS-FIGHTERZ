@@ -22,15 +22,19 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
   public opponent: Character = choosenOpponent;
   public randomCharacter: RandomCharacterComponent;
   public randomEgg: RandomEggsComponent;
+  public egg: Eggs;
+  public impactHero: string;
+  public impactOpponent: string;
 
-  constructor() { 
+  constructor() {
     this.musicIndex = 2;
     this.heroHealth = 50;
     this.opponentHealth = 50;
+
   }
-  
+
   ngOnInit() {
-    
+
   }
 
   ngAfterViewChecked() {
@@ -40,7 +44,43 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
 
   public nextTurn(char: Character) {
     this.hero = char;
-    this.randomCharacter.
+    this.opponent = this.randomCharacter.getRandomCharacter();
+    // Hero turn
+    this.battle();
+    // Opponent turn
+
+
+
+  }
+
+  public battle(): void {
+    // récuperer un nouvel egg
+    this.egg = new Eggs();
+    this.egg = this.randomEgg.getRandomEggs();
+
+    let power = this.egg.power.split(" ");
+    console.log(power);
+    let powerNumber = power[2].split(":");
+    console.log(powerNumber);
+    let powerQuantity = Number(powerNumber[1]);
+    console.log(powerQuantity);
+
+    if (this.egg.power.includes("increase")) {
+      if (this.heroHealth < 50) {
+        this.heroHealth += powerQuantity;
+        this.impactHero = "+" + powerQuantity;
+      }
+      if (this.heroHealth > 50) {
+        this.heroHealth = 50;
+      }
+    } else if (this.egg.power.includes("decrease")) {
+      this.opponentHealth -= powerQuantity;
+      this.impactOpponent = "-" + powerQuantity;
+
+      if (this.opponentHealth <= 0) {
+        console.log("Your opponent is Dead !!");
+      }
+    }
 
 
   }
