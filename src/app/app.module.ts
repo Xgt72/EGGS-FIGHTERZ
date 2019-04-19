@@ -8,9 +8,14 @@ import { AppComponent } from './app.component';
 import { PersonnageComponent } from './personnage/personnage.component';
 import { ButtonSexeComponent } from './button-sexe/button-sexe.component';
 import { ButtonGenreComponent } from './button-genre/button-genre.component';
+
 import { SexeMenuComponent } from './sexe-menu/sexe-menu.component';
 import { GenreMenuComponent } from './genre-menu/genre-menu.component';
 import { ROUTES } from './app.routes';
+
+import { ImagesGridComponent } from './images-grid/images-grid.component';
+import { CarteComponent } from './carte/carte.component';
+import { BattlePageComponent } from './battle-page/battle-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,10 @@ import { ROUTES } from './app.routes';
     ButtonSexeComponent,
     ButtonGenreComponent,
     SexeMenuComponent,
-    GenreMenuComponent
+    GenreMenuComponent,
+    ImagesGridComponent,
+    CarteComponent,
+    BattlePageComponent
   ],
   imports: [
     BrowserModule,

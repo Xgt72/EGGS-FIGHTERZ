@@ -1,0 +1,81 @@
+#mainBattle {
+    height: 50rem;
+    background-color: aqua;
+}
+
+#battlePage {
+    position: relative;
+    height: 100%;
+}
+
+#userHero {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 30rem;
+    height: 40rem;
+    background-color: black;
+}
+
+#opponent {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 30rem;
+    height: 40rem;
+    background-color: black;
+}
+
+.play {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%,0);
+    /* color: #8bc34a;
+    border: 2px solid #8bc34a; */
+    color: black;
+    font-size: 5rem;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.play:hover {
+    color: #76ff03;
+    border: 2px solid #76ff03;
+    box-shadow: 5px 5px 3px #ccff90, -5px 5px 3px #ccff90, -5px -5px 3px #ccff90, 5px -5px 3px #ccff90;
+    font-weight: bolder;
+}
+
+#resultOfActionHero {
+    color: #76ff03;
+    font-size: 5rem;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%,0);
+    opacity: 0;
+}
+
+#resultOfActionOpponent {
+    color: #ff3d00;
+    font-size: 5rem;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%,0);
+    opacity: 0;
+}
+
+.animateResult {
+    animation-name: resultAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: none;
+}
+
+@keyframes resultAnimation {
+    0% { opacity: 0; bottom: 5%}
+    10% { opacity: 0.2;}
+    90% { opacity: 1;}
+    100% { opacity: 0; bottom: 80%}
+}

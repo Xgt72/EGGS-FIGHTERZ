@@ -1,0 +1,10 @@
+.carte{
+    border: 2px black solid;
+    border-color: blue;
+    border-radius: 10px 5px 10px 5px;
+    padding: 5px 5px 5px 5px;
+}
+.picture{
+    border: 2px black solid;
+    
+}
