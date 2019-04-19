@@ -9,30 +9,24 @@ import { Character } from "../character";
 })
 export class ImagesGridComponent implements OnInit, AfterViewChecked {
 
-  public species: string = "Alien";
-  public gender: string = "Male";
+  public species: string = "Human";
+  public gender: string = "Female";
   // @Input() public species: string = "Human";
   // @Input() public gender: string = "Male";
 
   public charactersList: Character[];
   public charactersAdress: string = "http://easteregg.wildcodeschool.fr/api/characters";
-  // public characterBySpecies: Character[];
-  // public charactersByGender: Character[];
+
 
 
   constructor(private myService: DataAPIService) {
     this.charactersList = [];
-    console.log("1");
 
     this.myService.getCharactersArray(this.charactersAdress).subscribe(
       (paramChar: Character[]) => {
         this.charactersList = paramChar;
       }
     );
-    console.log("2");
-    console.log(this.charactersList);
-    // this.characterBySpecies = [];
-    // this.charactersByGender = [];
   }
 
 
@@ -47,8 +41,7 @@ export class ImagesGridComponent implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    console.log(this.charactersList);
-    console.log("4");
+
     let charactersByGender = this.charactersList.filter(
       char => char.gender == this.gender
     );
@@ -59,6 +52,10 @@ export class ImagesGridComponent implements OnInit, AfterViewChecked {
     );
 
     this.charactersList = characterBySpecies;
+  }
+
+  public chooseYourHero(char: Character) {
+
   }
 
 }

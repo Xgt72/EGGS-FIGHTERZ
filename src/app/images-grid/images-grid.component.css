@@ -1,19 +1,54 @@
 .card {
     box-shadow: 3px 3px 2px gray;
-    width: 20rem;
-
 }
 
-.card img {
+.imgCharGrid {
     border-radius: 5px;
-    border: 1px solid black;
-    
+    border: 1px solid white;
+    margin-bottom: 10px;
+    opacity: 0.5;
 }
 
 #displayMorePictures {
     box-shadow: 3px 5px 3px black,-3px 5px 3px black;
 }
 
-.cardPicture {
-    /* border: 1px solid red; */
+.chooseHeroButton {
+    /* color: #8bc34a;
+    border: 2px solid #8bc34a; */
+    color: black;
+    border: 2px solid gray;
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+.chooseHeroButton:hover {
+    color: #76ff03;
+    border: 2px solid #76ff03;
+    box-shadow: 5px 5px 3px #ccff90, -5px 5px 3px #ccff90, -5px -5px 3px #ccff90, 5px -5px 3px #ccff90;
+    font-weight: bolder;
+}
+
+.card:hover {
+    animation-name: borderLight;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.card:hover .imgCharGrid {
+    opacity: 1;
+    border: 1px solid #76ff03;
+    visibility: visible;
+    box-shadow: 2px 2px 3px #76ff03, -2px 2px 3px #76ff03, -2px -2px 3px #76ff03, 2px -2px 3px #76ff03,inset 2px 2px 3px #76ff03,inset -2px 2px 3px #76ff03,inset -2px -2px 3px #76ff03,inset 2px -2px 3px #76ff03;
+}
+
+.card:hover .chooseHeroButton {
+    visibility: visible;
+
+}
+
+@keyframes borderLight {
+    0% {box-shadow: none; border-color: #004d40;}
+    50% {box-shadow: 5px 5px 3px #76ff03, -5px 5px 3px #76ff03, -5px -5px 3px #76ff03, 5px -5px 3px #76ff03,inset 5px 5px 3px #76ff03,inset -5px 5px 3px #76ff03,inset -5px -5px 3px #76ff03,inset 5px -5px 3px #76ff03; border-color: #6200ea;}
+    100% {box-shadow: none; border-color: #004d40;}
 }
