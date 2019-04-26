@@ -1,0 +1,28 @@
+<div id="mainBattle" class="container-fluid mx-0 my-0">
+  <section id="battlePage" class="row no-gutters align-items-center p-2">
+    <div id="userHero">
+      <!-- <p class="nameChar">{{hero.name}}</p>     -->
+      <div id="resultOfActionHero">                
+        <p>Health : {{heroHealth}}</p><p>{{impactHero}}</p>
+      </div>
+    </div>
+    <div id="egg" *ngIf="egg.image">
+      <img [src]="egg.image" />
+      <p>{{egg.nom}}</p>
+    </div>
+    <div id="opponent">
+        <!-- <p class="nameChar">{{opponent.name}}</p> -->
+      <div id="resultOfActionOpponent">
+        <p>Health : {{opponentHealth}}</p><p>{{impactOpponent}}</p>
+      </div>
+    </div>
+    <div id="message">
+      <p>{{messageWinOrDead}}</p>
+    </div>
+    <!-- <button type="button" class="btn play" (click)="nextTurn(char)">Play</button> -->
+    <button type="button" class="btn play" (click)="nextTurn()">Play</button>
+  </section>
+</div>
+<audio autoplay loop>
+  <source src="../../assets/Musics Street/33.GuileStage.mp3" type="audio/mpeg">
+</audio>

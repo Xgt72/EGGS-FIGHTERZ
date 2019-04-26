@@ -1,0 +1,13 @@
+button { 
+    background-color: rgb(74, 175, 74);  
+    box-shadow: 10px 5px 5px blue;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 13.3rem;
+
+}
+
+.container {    
+    display: flex;
+    justify-content: center;
+}
