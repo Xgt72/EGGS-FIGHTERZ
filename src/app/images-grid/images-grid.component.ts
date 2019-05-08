@@ -17,7 +17,7 @@ export class ImagesGridComponent implements OnInit, AfterViewChecked {
   public gender: string = "Male";
 
   public charactersList: Character[];
-  public charactersAdress: string = "http://easteregg.wildcodeschool.fr/api/characters";
+  public charactersAdress: string = "https://easteregg.wildcodeschool.fr/api/characters";
 
 
 

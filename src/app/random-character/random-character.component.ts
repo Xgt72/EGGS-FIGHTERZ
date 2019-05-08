@@ -10,9 +10,9 @@ import { Character } from "../character";
 })
 export class RandomCharacterComponent implements OnInit {
   public eggsList: Eggs[];
-  public eggsAdress: string = "http://easteregg.wildcodeschool.fr/api/eggs";
+  public eggsAdress: string = "https://easteregg.wildcodeschool.fr/api/eggs";
   public charactersList: Character[];
-  public charactersAdress: string = "http://easteregg.wildcodeschool.fr/api/characters";
+  public charactersAdress: string = "https://easteregg.wildcodeschool.fr/api/characters";
   public randomEgg:Eggs;
   public randomChar:Character;
 

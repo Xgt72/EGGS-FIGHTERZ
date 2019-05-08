@@ -11,9 +11,9 @@ import { Character } from "../app/character";
 export class AppComponent implements OnInit {
   title = 'EggsFighterz';
   public eggsList: Eggs[];
-  public eggsAdress: string = "http://easteregg.wildcodeschool.fr/api/eggs";
+  public eggsAdress: string = "https://easteregg.wildcodeschool.fr/api/eggs";
   public charactersList: Character[];
-  public charactersAdress: string = "http://easteregg.wildcodeschool.fr/api/characters";
+  public charactersAdress: string = "https://easteregg.wildcodeschool.fr/api/characters";
 
   constructor(private myService: DataAPIService) {
     this.eggsList = [];

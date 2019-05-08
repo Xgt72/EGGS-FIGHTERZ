@@ -10,7 +10,7 @@ import { Character } from '../character';
 export class PersonnageComponent implements OnInit {
   title = 'EggsFighterz';
   public charactersList: Character[];
-  public charactersAdress: string = "http://easteregg.wildcodeschool.fr/api/characters";
+  public charactersAdress: string = "https://easteregg.wildcodeschool.fr/api/characters";
 
   constructor(private myService: DataAPIService) {
     this.charactersList = [];

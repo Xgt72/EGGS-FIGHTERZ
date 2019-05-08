@@ -29,9 +29,9 @@ export class BattlePageComponent implements OnInit, AfterViewChecked {
   public impactHero: string;
   public impactOpponent: string;
   public eggsList: Eggs[];
-  public eggsAdress: string = "http://easteregg.wildcodeschool.fr/api/eggs";
+  public eggsAdress: string = "https://easteregg.wildcodeschool.fr/api/eggs";
   public charactersList: Character[];
-  public charactersAdress: string = "http://easteregg.wildcodeschool.fr/api/characters";
+  public charactersAdress: string = "https://easteregg.wildcodeschool.fr/api/characters";
 
   constructor(private myService: DataAPIService) {
 
